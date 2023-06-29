@@ -12,7 +12,7 @@ export async function getCity(id: number) {
   const res = await request.get(`${citiesURL}/${id}`)
 }
 
-export async function addCity(city: CityData) {
+export async function addCity(city: CityData | null) {
   await request.post(citiesURL).send(city)
 }
 

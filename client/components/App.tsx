@@ -3,6 +3,7 @@ import { useEffect } from "react"
 
 import { getCities } from "../actions/cities"
 
+import Nav from "./Nav"
 import Header from "./Header"
 import Footer from "./Footer"
 import { useAppDispatch } from "../hooks/hooks"
@@ -17,6 +18,7 @@ function App() {
   return (
     <>
       <Header />
+      <Nav />
       <Outlet />
       <Footer />
     </>

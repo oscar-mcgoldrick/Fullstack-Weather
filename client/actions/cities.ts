@@ -21,7 +21,7 @@ export function delCityAction(id: number) {
   }
 }
 
-export function addCityAction(city: CityData) {
+export function addCityAction(city: CityData | null) {
   return {
     type: ADD_CITY,
     payload: city
@@ -57,10 +57,11 @@ export function delCity(id: number): ThunkAction {
   }
 }
 
-export function addCity(city: CityData): ThunkAction {
+export function addCity(city: CityData | null): ThunkAction {
   return async (dispatch) => {
     try {
       const newCity = await api.addCity(city)
+      console.log(city)
       dispatch(addCityAction(city))
     } catch (e) {
       console.error('these actions keep pooping :(', e)
